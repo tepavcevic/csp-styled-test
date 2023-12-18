@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import createCache from '@emotion/cache'
 import {v4 as uuidv4} from 'uuid';
 import Home from './pages/home';
@@ -33,12 +33,12 @@ return (
           ></meta>
         </Helmet>
         <Layout>
-          <BrowserRouter>
+          <HashRouter>
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/contact' element={<Contact />} />
             </Routes>
-          </BrowserRouter>
+          </HashRouter>
         </Layout>
       </HelmetProvider>
     </CacheProvider>
