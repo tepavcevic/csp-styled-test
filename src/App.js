@@ -9,13 +9,14 @@ import { CacheProvider } from '@emotion/react';
 
 
 function App() {
-  const nonce = uuidv4().toString('base64');
+  const nonce = btoa(uuidv4());
   const cache = createCache({
   key: 'csp-key',
   nonce: nonce,
   prepend: true,
 });
 
+console.log("Nonce: " + nonce);
 
 return (
     <CacheProvider value={cache}>
